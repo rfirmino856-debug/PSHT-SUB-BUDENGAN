@@ -3,6 +3,24 @@
    PSHT SUB BUDENGAN
 ========================================================== */
 
+/* ===============================
+   AUDIO
+================================ */
+
+const audio = new Audio("asset/lagu.MP3");
+
+audio.loop = true;
+audio.volume = 0.5;
+audio.preload = "auto";
+
+function startAudio() {
+    audio.play().catch(() => {
+        document.body.addEventListener("click", function onFirstInteraction() {
+            audio.play().catch(() => {});
+        }, { once: true });
+    });
+}
+
 window.addEventListener("load", () => {
 
     setTimeout(() => {
@@ -16,6 +34,8 @@ window.addEventListener("load", () => {
         },800);
 
     },1500);
+
+    startAudio();
 
 });
 
@@ -34,17 +54,6 @@ if(nama){
     decodeURIComponent(nama.replace(/\+/g," "));
 
 }
-
-
-/* ===============================
-   AUDIO
-================================ */
-
-const audio = new Audio("assets/musik.mp3");
-
-audio.loop = true;
-
-audio.volume = 0.5;
 
 
 /* ===============================
