@@ -1,0 +1,506 @@
+/* =======================================================
+   SILATURRAHMI & NYUCI MORI PSHT SUB BUDENGAN
+   Premium Style v1.0
+======================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#050505;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+/* ================= LOADING ================= */
+
+#loading{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:1s;
+}
+
+.loader{
+    text-align:center;
+}
+
+.loader-logo img{
+    width:110px;
+    animation:spin 6s linear infinite;
+}
+
+.loader h2{
+    margin-top:20px;
+    color:#d4af37;
+    font-family:'Cinzel',serif;
+    letter-spacing:3px;
+}
+
+.loader p{
+    margin-top:10px;
+    color:#ccc;
+}
+
+@keyframes spin{
+    from{transform:rotateY(0deg);}
+    to{transform:rotateY(360deg);}
+}
+
+/* ================= HERO ================= */
+
+#hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+/* Background */
+
+.background-layer{
+    position:absolute;
+    inset:0;
+    z-index:1;
+}
+
+.background-layer img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(.35);
+}
+
+/* Siluet */
+
+.middle-layer{
+    position:absolute;
+    inset:0;
+    z-index:2;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+}
+
+.middle-layer img{
+    width:70%;
+    max-width:520px;
+    filter:drop-shadow(0 0 25px rgba(255,215,0,.35));
+}
+
+/* Teratai */
+
+.front-layer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    z-index:3;
+    display:flex;
+    justify-content:center;
+}
+
+.front-layer img{
+    width:280px;
+    animation:floatLotus 4s ease-in-out infinite;
+}
+
+@keyframes floatLotus{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+}
+
+/* Overlay */
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        rgba(0,0,0,.30),
+        rgba(0,0,0,.75),
+        #050505
+    );
+    z-index:4;
+}
+
+/* Hero Content */
+
+.hero-content{
+    position:relative;
+    z-index:10;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content h5{
+    font-size:18px;
+    color:#ddd;
+    margin-bottom:10px;
+}
+
+.hero-content h2{
+    color:#ffffff;
+    font-weight:500;
+    margin-bottom:30px;
+}
+
+.hero-content h1{
+
+    font-family:'Cinzel',serif;
+    font-size:55px;
+    color:#d4af37;
+    line-height:1.2;
+
+    text-shadow:
+    0 0 10px rgba(212,175,55,.5),
+    0 0 20px rgba(212,175,55,.35);
+
+}
+
+.hero-content span{
+    display:block;
+    font-size:30px;
+    margin:12px 0;
+}
+
+.hero-content h3{
+
+    margin-top:25px;
+    font-size:30px;
+    letter-spacing:2px;
+
+}
+
+.hero-content p{
+
+    margin-top:12px;
+    color:#dddddd;
+
+}
+
+#openInvitation{
+
+    margin-top:35px;
+
+    background:#d4af37;
+
+    color:#111;
+
+    border:none;
+
+    padding:16px 36px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    transition:.35s;
+
+}
+
+#openInvitation:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+0 0 25px gold;
+
+}
+
+/* ================= NAV ================= */
+
+nav{
+
+position:sticky;
+
+top:0;
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+padding:15px;
+
+background:rgba(0,0,0,.65);
+
+backdrop-filter:blur(12px);
+
+z-index:200;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#d4af37;
+
+}
+
+/* ================= SECTION ================= */
+
+.section{
+
+padding:90px 25px;
+
+text-align:center;
+
+}
+
+.section h2{
+
+font-family:'Cinzel',serif;
+
+font-size:34px;
+
+margin-bottom:30px;
+
+color:#d4af37;
+
+}
+
+.section p{
+
+max-width:760px;
+
+margin:auto;
+
+line-height:1.9;
+
+color:#dddddd;
+
+}
+
+/* ================= TIMER ================= */
+
+#timer{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:15px;
+
+margin-top:30px;
+
+max-width:700px;
+
+margin-inline:auto;
+
+}
+
+#timer div{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+padding:20px;
+
+backdrop-filter:blur(10px);
+
+}
+
+#timer strong{
+
+display:block;
+
+font-size:34px;
+
+color:#d4af37;
+
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline{
+
+display:grid;
+
+gap:20px;
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+border-left:5px solid #d4af37;
+
+padding:22px;
+
+border-radius:14px;
+
+text-align:left;
+
+backdrop-filter:blur(10px);
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateX(10px);
+
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+.gallery img{
+
+width:100%;
+
+border-radius:18px;
+
+transition:.4s;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+/* ================= BUTTON ================= */
+
+#mapsButton{
+
+display:inline-block;
+
+margin-top:30px;
+
+padding:16px 32px;
+
+background:#d4af37;
+
+color:#111;
+
+text-decoration:none;
+
+border-radius:40px;
+
+font-weight:bold;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+padding:30px;
+
+text-align:center;
+
+background:#000;
+
+color:#aaa;
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.hero-content h1{
+
+font-size:34px;
+
+}
+
+.hero-content h3{
+
+font-size:22px;
+
+}
+
+.middle-layer img{
+
+width:92%;
+
+}
+
+.front-layer img{
+
+width:180px;
+
+}
+
+#timer{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.section h2{
+
+font-size:28px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+gap:10px;
+
+}
+
+}
